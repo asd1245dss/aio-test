@@ -5,8 +5,6 @@ import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
-import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
 /**
  * Created by aayongche on 2016/9/12.
@@ -46,9 +44,10 @@ public class AIOClient implements Runnable{
         });
 
         final ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
-        client.read(byteBuffer, null, new CompletionHandler<Integer, Object>() {
+        client.read(byteBuffer, this, new CompletionHandler<Integer, Object>() {
             public void completed(Integer result, Object attachment) {
-                System.out.println("client read data: " + byteBuffer.toString());
+                System.out.println(result);
+                System.out.println("client read data: " + new String(byteBuffer.array()));
             }
 
             public void failed(Throwable exc, Object attachment) {
