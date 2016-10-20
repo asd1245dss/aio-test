@@ -7,7 +7,7 @@ import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
 
 /**
- * Created by aayongche on 2016/9/12.
+ * AsynchronousSocketChannel
  */
 public class AIOClient implements Runnable{
 
