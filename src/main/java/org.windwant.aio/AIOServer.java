@@ -12,7 +12,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 
 /**
- * Created by aayongche on 2016/9/12.
+ * AsynchronousServerSocketChannel
  */
 public class AIOServer implements Runnable{
 
